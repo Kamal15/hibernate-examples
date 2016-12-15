@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+    <class name="in.co.nmsworks.hibernate.examples.Employee" table="EMPLOYEE">
+        <id name="employeeId" column="EMPLOYEE_ID" type="java.lang.Long">
+            <generator class="native" />
+        </id>
+
+        <property name="firstName" />
+        <property name="lastName" />
+        <property name="birthDate" type="date" />
+        <property name="cellPhone" />
+
+        <one-to-one name="employeeDetail" class="in.co.nmsworks.hibernate.examples.EmployeeDetail"
+                    cascade="save-update"></one-to-one>
+
+    </class>
+</hibernate-mapping>
