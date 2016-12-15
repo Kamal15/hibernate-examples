@@ -37,8 +37,13 @@ public class OfficialEmployeeDetail extends EmployeeDetail {
 
     @Override
     public String toString() {
-        return "OfficialEmployeeDetail{" +
-                "designation='" + designation + '\'' +
+        return "OfficialEmployeeDetail {" +
+                "employeeId=" + employeeId +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", designation=" + designation +
                 ", salary=" + salary +
                 '}';
     }

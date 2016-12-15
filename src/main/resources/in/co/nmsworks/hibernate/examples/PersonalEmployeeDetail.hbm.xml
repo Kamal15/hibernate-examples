@@ -4,14 +4,15 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-    
-    <joined-subclass extends="in.co.nmsworks.hibernate.examples.EmployeeDetail" 
-                     name="in.co.nmsworks.hibernate.examples.PersonalEmployeeDetail" table="PERSONAL_EMPLOYEE_DETAIL">
+
+    <subclass extends="in.co.nmsworks.hibernate.examples.EmployeeDetail" 
+                    name="in.co.nmsworks.hibernate.examples.PersonalEmployeeDetail" discriminator-value="PERSONAL">
         
-        <key on-delete="cascade" column="EMPLOYEE_ID"/>
-        <property name="age" type="java.lang.Integer"/>
-        <property name="gender"/>
-        
-    </joined-subclass>
+        <join table="PERSONAL_EMPLOYEE_DETAIL">
+            <key column="EMPLOYEE_ID" on-delete="cascade"/>
+            <property name="age" type="java.lang.Integer"/>
+            <property name="gender"/>
+        </join>
+    </subclass>
 
 </hibernate-mapping>

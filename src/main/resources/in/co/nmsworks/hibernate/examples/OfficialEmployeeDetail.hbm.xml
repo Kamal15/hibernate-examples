@@ -4,15 +4,16 @@
         "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-
-    <joined-subclass extends="in.co.nmsworks.hibernate.examples.EmployeeDetail"
-                     name="in.co.nmsworks.hibernate.examples.OfficialEmployeeDetail" table="OFFICIAL_EMPLOYEE_DETAIL">
-
-        <key on-delete="cascade" column="EMPLOYEE_ID"/>
-        <property name="salary" type="java.lang.Integer"/>
-        <property name="designation"/>
-
-    </joined-subclass>
+    
+    <subclass extends="in.co.nmsworks.hibernate.examples.EmployeeDetail" 
+                    name="in.co.nmsworks.hibernate.examples.OfficialEmployeeDetail" discriminator-value="OFFICIAL">
+        
+        <join table="OFFICIAL_EMPLOYEE_DETAIL">
+            <key column="EMPLOYEE_ID" on-delete="cascade"/>
+            <property name="salary" type="java.lang.Integer"/>
+            <property name="designation"/>
+        </join>
+    </subclass>
 
 </hibernate-mapping>
 

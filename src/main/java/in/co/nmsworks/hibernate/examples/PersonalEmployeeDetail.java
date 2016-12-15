@@ -40,8 +40,13 @@ public class PersonalEmployeeDetail extends EmployeeDetail {
     @Override
     public String toString() {
         return "PersonalEmployeeDetail{" +
-                "age=" + age +
-                ", gender='" + gender + '\'' +
+                "employeeId=" + employeeId +
+                ", street='" + street + '\'' +
+                ", city='" + city + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", age=" + age +
+                ", gender=" + gender +
                 '}';
     }
 }

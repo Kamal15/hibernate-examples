@@ -5,20 +5,21 @@
 
 <hibernate-mapping>
 
-    <class name="in.co.nmsworks.hibernate.examples.EmployeeDetail" table="EMPLOYEE_DETAIL">
+    <class name="in.co.nmsworks.hibernate.examples.EmployeeDetail" abstract="true">
         <id name="employeeId" column="EMPLOYEE_ID" type="java.lang.Long">
             <generator class="foreign">
                 <param name="property">employee</param>
             </generator>
         </id>
 
+        <discriminator column="discriminator" type="string"/>
         <property name="street" />
         <property name="city" />
         <property name="state" />
         <property name="country" />
         
         <one-to-one name="employee" class="in.co.nmsworks.hibernate.examples.Employee"
-                    constrained="true"></one-to-one>
+                    constrained="true"/>
 
     </class>
 </hibernate-mapping>

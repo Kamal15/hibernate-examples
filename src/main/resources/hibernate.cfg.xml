@@ -18,6 +18,7 @@
 	<property name="hibernate.c3p0.acquire_increment">5</property>
     
     <property name="hbm2ddl.auto">update</property>
+      <property name="show_sql">true</property>
     
       <mapping resource="in/co/nmsworks/hibernate/examples/Employee.hbm.xml"/>
       <mapping resource="in/co/nmsworks/hibernate/examples/EmployeeDetail.hbm.xml"/>

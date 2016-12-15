@@ -39,9 +39,9 @@ public class Main {
         session.save(employee);
         session.save(emp1);
         
-        final List<Employee> employees = session.createQuery("from Employee").list();
+        final List<Employee> employees = session.createQuery("from Employee where employeeId=2").list();
         for (Employee emp : employees) {
-            System.out.println(emp);
+            System.out.println("Employee :: " + emp);
         }
 
         transaction.commit();

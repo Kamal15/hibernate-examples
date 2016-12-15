@@ -6,13 +6,13 @@ package in.co.nmsworks.hibernate.examples;
  * Copyright 2016-2017 NMSWorks Software Pvt Ltd. All rights reserved.
  * NMSWorks PROPRIETARY/CONFIDENTIAL. Use is subject to licence terms.
  */
-public class EmployeeDetail {
+public abstract class EmployeeDetail {
     
-    private Long employeeId;
-    private String street;
-    private String city;
-    private String state;
-    private String country;
+    Long employeeId;
+    String street;
+    String city;
+    String state;
+    String country;
     
     private Employee employee;
     
